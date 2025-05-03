@@ -109,6 +109,26 @@ printf "[${BOLD_YELLOW}•${RESET}] Checking for dex..."
 command -v dex > /dev/null 2>&1 || { printf >&2 "\r[${BOLD_RED}✘${RESET}] ${BOLD_MAGENTA}dex${RESET} ${RED}is not installed.${RESET}\n"; exit 1; }
 printf "\r[${BOLD_GREEN}✔${RESET}] Checking for dex...\n"
 
+# Check if picom is installed
+printf "[${BOLD_YELLOW}•${RESET}] Checking for picom..."
+command -v picom > /dev/null 2>&1 || { printf >&2 "\r[${BOLD_RED}✘${RESET}] ${BOLD_MAGENTA}picom${RESET} ${RED}is not installed.${RESET}\n"; exit 1; }
+printf "\r[${BOLD_GREEN}✔${RESET}] Checking for picom...\n"
+
+# Check if feh is installed
+printf "[${BOLD_YELLOW}•${RESET}] Checking for feh..."
+command -v feh > /dev/null 2>&1 || { printf >&2 "\r[${BOLD_RED}✘${RESET}] ${BOLD_MAGENTA}feh${RESET} ${RED}is not installed.${RESET}\n"; exit 1; }
+printf "\r[${BOLD_GREEN}✔${RESET}] Checking for feh...\n"
+
+# Check if dunst is installed
+printf "[${BOLD_YELLOW}•${RESET}] Checking for dunst..."
+command -v dunst > /dev/null 2>&1 || { printf >&2 "\r[${BOLD_RED}✘${RESET}] ${BOLD_MAGENTA}dunst${RESET} ${RED}is not installed.${RESET}\n"; exit 1; }
+printf "\r[${BOLD_GREEN}✔${RESET}] Checking for dunst...\n"
+
+# Check if rofi is installed
+printf "[${BOLD_YELLOW}•${RESET}] Checking for rofi..."
+command -v rofi > /dev/null 2>&1 || { printf >&2 "\r[${BOLD_RED}✘${RESET}] ${BOLD_MAGENTA}rofi${RESET} ${RED}is not installed.${RESET}\n"; exit 1; }
+printf "\r[${BOLD_GREEN}✔${RESET}] Checking for rofi...\n"
+
 # Check if xss-lock is installed
 printf "[${BOLD_YELLOW}•${RESET}] Checking for xss-lock..."
 command -v xss-lock > /dev/null 2>&1 || { printf >&2 "\r[${BOLD_RED}✘${RESET}] ${BOLD_MAGENTA}xss-lock${RESET} ${RED}is not installed.${RESET}\n"; exit 1; }
@@ -157,9 +177,9 @@ mkdir -p "$HOME/.config/alacritty"
 printf "[${BOLD_YELLOW}•${RESET}] Installing config for alacritty..."
 if [[ -f "$HOME/.config/alacritty/alacritty.toml" ]]; then
     rm -f $HOME/.config/alacritty/alacritty.toml
-    ln -sf $DOTFILES_DIR/config/alacritty.toml $HOME/.config/alacritty/alacritty.toml
+    ln -sf $DOTFILES_DIR/config/alacritty/alacritty.toml $HOME/.config/alacritty/alacritty.toml
 else
-    ln -sf $DOTFILES_DIR/config/alacritty.toml $HOME/.config/alacritty/alacritty.toml
+    ln -sf $DOTFILES_DIR/config/alacritty/alacritty.toml $HOME/.config/alacritty/alacritty.toml
 fi
 printf "\r[${BOLD_GREEN}✔${RESET}] Installing config for alacritty...\n"
 
@@ -170,11 +190,37 @@ mkdir -p "$HOME/.config/i3"
 printf "[${BOLD_YELLOW}•${RESET}] Installing config for i3..."
 if [[ -f "$HOME/.config/i3/config" ]]; then
     rm -f $HOME/.config/i3/config
-    ln -sf $DOTFILES_DIR/config/i3 $HOME/.config/i3/config
+    ln -sf $DOTFILES_DIR/config/i3/config $HOME/.config/i3/config
 else
-    ln -sf $DOTFILES_DIR/config/i3 $HOME/.config/i3/config
+    ln -sf $DOTFILES_DIR/config/i3/config $HOME/.config/i3/config
 fi
 printf "\r[${BOLD_GREEN}✔${RESET}] Installing config for i3...\n"
+
+# Ensure ~/.config/picom exists
+mkdir -p "$HOME/.config/picom"
+
+# picom
+printf "[${BOLD_YELLOW}•${RESET}] Installing config for picom..."
+if [[ -f "$HOME/.config/picom/picom.conf" ]]; then
+    rm -f $HOME/.config/picom/picom.conf
+    ln -sf $DOTFILES_DIR/config/picom/picom.conf $HOME/.config/picom/picom.conf
+else
+    ln -sf $DOTFILES_DIR/config/picom/picom.conf $HOME/.config/picom/picom.conf
+fi
+printf "\r[${BOLD_GREEN}✔${RESET}] Installing config for picom...\n"
+
+# Ensure ~/.config/rofi exists
+mkdir -p "$HOME/.config/rofi"
+
+# rofi
+printf "[${BOLD_YELLOW}•${RESET}] Installing config for rofi..."
+if [[ -f "$HOME/.config/rofi/config.rasi" ]]; then
+    rm -f $HOME/.config/rofi/config.rasi
+    ln -sf $DOTFILES_DIR/config/rofi/config.rasi $HOME/.config/rofi/config.rasi
+else
+    ln -sf $DOTFILES_DIR/config/rofi/config.rasi $HOME/.config/rofi/config.rasi
+fi
+printf "\r[${BOLD_GREEN}✔${RESET}] Installing config for rofi...\n"
 
 # .zshrc (This should go last)
 printf "[${BOLD_YELLOW}•${RESET}] Updating zshrc..."
