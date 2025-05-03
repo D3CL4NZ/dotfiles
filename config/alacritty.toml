@@ -1,0 +1,18 @@
+# $HOME/.config/alacritty/alacritty.toml
+# by Declan Zevan 2025-05-03
+
+[window]
+
+opacity = 0.9
+
+decorations = "Full"
+decorations_theme_variant = "Dark" # "Dark"
+
+[font]
+
+normal.family = "MesloLGM Nerd Font"
+bold.family = "MesloLGM Nerd Font"
+italic.family = "MesloLGM Nerd Font"
+bold_italic.family = "MesloLGM Nerd Font"
+
+size = 14.0

@@ -130,6 +130,19 @@ else
 fi
 printf "\r[${BOLD_GREEN}✔${RESET}] Installing config for powerlevel10k...\n"
 
+# Ensure ~/.config/alacritty exists
+mkdir -p "$HOME/.config/alacritty"
+
+# Alacritty
+printf "[${BOLD_YELLOW}•${RESET}] Installing config for alacritty..."
+if [[ -f "$HOME/.config/alacritty/alacritty.toml" ]]; then
+    rm -f $HOME/.config/alacritty/alacritty.toml
+    ln -sf $DOTFILES_DIR/config/alacritty.toml $HOME/.config/alacritty/alacritty.toml
+else
+    ln -sf $DOTFILES_DIR/config/alacritty.toml $HOME/.config/alacritty/alacritty.toml
+fi
+printf "\r[${BOLD_GREEN}✔${RESET}] Installing config for alacritty...\n"
+
 # .zshrc (This should go last)
 printf "[${BOLD_YELLOW}•${RESET}] Updating zshrc..."
 if [[ -f "$HOME/.zshrc" ]]; then
