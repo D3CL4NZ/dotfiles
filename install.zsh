@@ -60,7 +60,7 @@ printf "\r[${BOLD_GREEN}✔${RESET}] Checking for i3...\n"
 
 # Check if fontconfig is installed
 printf "[${BOLD_YELLOW}•${RESET}] Checking for fontconfig..."
-command -v fontconfig > /dev/null 2>&1 || { printf >&2 "\r[${BOLD_RED}✘${RESET}] ${BOLD_MAGENTA}fontconfig${RESET} ${RED}is not installed.${RESET}\n"; exit 1; }
+command -v fc-list > /dev/null 2>&1 || { printf >&2 "\r[${BOLD_RED}✘${RESET}] ${BOLD_MAGENTA}fontconfig${RESET} ${RED}is not installed.${RESET}\n"; exit 1; }
 printf "\r[${BOLD_GREEN}✔${RESET}] Checking for fontconfig...\n"
 
 # Check if Meslo Nerd Fonts are installed
