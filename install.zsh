@@ -23,7 +23,7 @@ RESET="\033[0m" # Reset to default color
 BOLD_RESET="\033[0m\033[1m"
 
 printf "\nWelcome to ${BOLD_MAGENTA}D3CL4NZ's dotfile installation script${RESET}!\n"
-printf "[${BOLD_YELLOW}!${RESET}] ${BOLD_CYAN}This script is meant to be executed on ArchLinux.${RESET}\n\n"
+printf "[${BOLD_YELLOW}!${RESET}] ${BOLD_CYAN}This script is designed for ArchLinux.${RESET}\n\n"
 
 # Check if git is installed
 printf "[${BOLD_YELLOW}•${RESET}] Checking for git..."
@@ -60,7 +60,7 @@ printf "\r[${BOLD_GREEN}✔${RESET}] Checking for i3...\n"
 
 # Check if fontconfig is installed
 printf "[${BOLD_YELLOW}•${RESET}] Checking for fontconfig..."
-command -v git > /dev/null 2>&1 || { printf >&2 "\r[${BOLD_RED}✘${RESET}] ${BOLD_MAGENTA}fontconfig${RESET} ${RED}is not installed.${RESET}\n"; exit 1; }
+command -v fontconfig > /dev/null 2>&1 || { printf >&2 "\r[${BOLD_RED}✘${RESET}] ${BOLD_MAGENTA}fontconfig${RESET} ${RED}is not installed.${RESET}\n"; exit 1; }
 printf "\r[${BOLD_GREEN}✔${RESET}] Checking for fontconfig...\n"
 
 # Check if Meslo Nerd Fonts are installed
@@ -103,6 +103,26 @@ else
   printf "\r[${BOLD_RED}✘${RESET}] ${BOLD_MAGENTA}colorls${RESET} ${RED}is not installed.${RESET}\n"
   exit 1
 fi
+
+# Check if dex is installed
+printf "[${BOLD_YELLOW}•${RESET}] Checking for dex..."
+command -v dex > /dev/null 2>&1 || { printf >&2 "\r[${BOLD_RED}✘${RESET}] ${BOLD_MAGENTA}dex${RESET} ${RED}is not installed.${RESET}\n"; exit 1; }
+printf "\r[${BOLD_GREEN}✔${RESET}] Checking for dex...\n"
+
+# Check if xss-lock is installed
+printf "[${BOLD_YELLOW}•${RESET}] Checking for xss-lock..."
+command -v xss-lock > /dev/null 2>&1 || { printf >&2 "\r[${BOLD_RED}✘${RESET}] ${BOLD_MAGENTA}xss-lock${RESET} ${RED}is not installed.${RESET}\n"; exit 1; }
+printf "\r[${BOLD_GREEN}✔${RESET}] Checking for xss-lock...\n"
+
+# Check if nm-applet is installed
+printf "[${BOLD_YELLOW}•${RESET}] Checking for nm-applet..."
+command -v nm-applet > /dev/null 2>&1 || { printf >&2 "\r[${BOLD_RED}✘${RESET}] ${BOLD_MAGENTA}nm-applet${RESET} ${RED}is not installed.${RESET}\n"; exit 1; }
+printf "\r[${BOLD_GREEN}✔${RESET}] Checking for nm-applet...\n"
+
+# Check if dmenu is installed
+printf "[${BOLD_YELLOW}•${RESET}] Checking for dmenu..."
+command -v dmenu_run > /dev/null 2>&1 || { printf >&2 "\r[${BOLD_RED}✘${RESET}] ${BOLD_MAGENTA}dmenu${RESET} ${RED}is not installed.${RESET}\n"; exit 1; }
+printf "\r[${BOLD_GREEN}✔${RESET}] Checking for dmenu...\n"
 
 printf "\nDependency check complete. Beginning installation...\n"
 
