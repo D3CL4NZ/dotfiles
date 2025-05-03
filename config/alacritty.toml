@@ -6,13 +6,13 @@
 opacity = 0.9
 
 decorations = "Full"
-decorations_theme_variant = "Dark" # "Dark"
+decorations_theme_variant = "Dark" # "Light"
 
 [font]
 
-normal.family = "MesloLGM Nerd Font"
-bold.family = "MesloLGM Nerd Font"
-italic.family = "MesloLGM Nerd Font"
-bold_italic.family = "MesloLGM Nerd Font"
+normal.family = "MesloLGM Nerd Font Mono"
+bold.family = "MesloLGM Nerd Font Mono"
+italic.family = "MesloLGM Nerd Font Mono"
+bold_italic.family = "MesloLGM Nerd Font Mono"
 
 size = 14.0
