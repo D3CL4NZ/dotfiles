@@ -28,31 +28,31 @@ printf "[${BOLD_YELLOW}!${RESET}] ${BOLD_CYAN}This script is meant to be execute
 if [[ -f /etc/os-release ]]; then
   source /etc/os-release
   if [[ "${ID,,}" != "arch" ]]; then
-    printf >&2 "\r[${BOLD_RED}x${RESET}] ${BOLD_RED}OS check failed.${RESET}\n"
+    printf >&2 "\r[${BOLD_RED}✘${RESET}] ${BOLD_RED}OS check failed.${RESET}\n"
     exit 1
   fi
 else
-  printf >&2 "\r[${BOLD_RED}x${RESET}] ${BOLD_RED}OS check failed.${RESET}\n"
+  printf >&2 "\r[${BOLD_RED}✘${RESET}] ${BOLD_RED}OS check failed.${RESET}\n"
   exit 1
 fi
 
-printf "[${BOLD_YELLOW}-${RESET}] Checking for git..."
-command -v git > /dev/null 2>&1 || { printf >&2 "\r[${BOLD_RED}x${RESET}] ${BOLD_RED}Git is not installed.${RESET}\n"; exit 1; }
-printf "\r[${BOLD_GREEN}√${RESET}] Checking for git...\n"
+printf "[${BOLD_YELLOW}•${RESET}] Checking for git..."
+command -v git > /dev/null 2>&1 || { printf >&2 "\r[${BOLD_RED}✘${RESET}] ${BOLD_RED}Git is not installed.${RESET}\n"; exit 1; }
+printf "\r[${BOLD_GREEN}✔${RESET}] Checking for git...\n"
 
-printf "[${BOLD_YELLOW}-${RESET}] Checking for oh-my-zsh..."
+printf "[${BOLD_YELLOW}•${RESET}] Checking for oh-my-zsh..."
 if [ -d "$HOME/.oh-my-zsh" ]; then
-    printf "\r[${BOLD_GREEN}√${RESET}] Checking for oh-my-zsh...\n"
+    printf "\r[${BOLD_GREEN}✔${RESET}] Checking for oh-my-zsh...\n"
 else
-    printf "\r[${BOLD_RED}x${RESET}] ${BOLD_RED}Oh-my-zsh is not installed.${RESET}\n"
+    printf "\r[${BOLD_RED}✘${RESET}] ${BOLD_RED}Oh-my-zsh is not installed.${RESET}\n"
     exit 1
 fi
 
-printf "[${BOLD_YELLOW}-${RESET}] Checking for powerlevel10k..."
+printf "[${BOLD_YELLOW}•${RESET}] Checking for powerlevel10k..."
 if [ -d "$HOME/.oh-my-zsh/custom/themes/powerlevel10k" ]; then
-    printf "\r[${BOLD_GREEN}√${RESET}] Checking for powerlevel10k...\n"
+    printf "\r[${BOLD_GREEN}✔${RESET}] Checking for powerlevel10k...\n"
 else
-    printf "\r[${BOLD_RED}x${RESET}] ${BOLD_RED}Powerlevel10k is not installed.${RESET}\n"
+    printf "\r[${BOLD_RED}✘${RESET}] ${BOLD_RED}Powerlevel10k is not installed.${RESET}\n"
     exit 1
 fi
 
@@ -60,30 +60,30 @@ printf "\nDependency check complete. Beginning installation...\n"
 
 # Clone or update the repo
 if [[ -d "$DOTFILES_DIR/.git" ]]; then
-    printf "[${BOLD_YELLOW}-${RESET}] Updating existing dotfiles repo..."
-    git -C "$DOTFILES_DIR" pull --rebase > /dev/null 2>&1 || { printf >&2 "\r[x] Updating existing dotfiles repo...\n"; exit 1; }
-    printf "\r[${BOLD_GREEN}√${RESET}] Updating existing dotfiles repo...\n"
+    printf "[${BOLD_YELLOW}•${RESET}] Updating existing dotfiles repo..."
+    git -C "$DOTFILES_DIR" pull --rebase > /dev/null 2>&1 || { printf >&2 "\r[${BOLD_RED}✘${RESET}] ${BOLD_RED}Updating existing dotfiles repo...${RESET}\n"; exit 1; }
+    printf "\r[${BOLD_GREEN}✔${RESET}] Updating existing dotfiles repo...\n"
 else
-    printf "[${BOLD_YELLOW}-${RESET}] Cloning dotfiles into $DOTFILES_DIR..."
-    git clone "$REPO_URL" "$DOTFILES_DIR" > /dev/null 2>&1 || { printf >&2 "\r[x] Cloning dotfiles into $DOTFILES_DIR...\n"; exit 1;}
-    printf "\r[${BOLD_GREEN}√${RESET}] Cloning dotfiles into $DOTFILES_DIR...\n"
+    printf "[${BOLD_YELLOW}•${RESET}] Cloning dotfiles into $DOTFILES_DIR..."
+    git clone "$REPO_URL" "$DOTFILES_DIR" > /dev/null 2>&1 || { printf >&2 "\r[${BOLD_RED}✘${RESET}] ${BOLD_RED}Cloning dotfiles into $DOTFILES_DIR...${RESET}\n"; exit 1;}
+    printf "\r[${BOLD_GREEN}✔${RESET}] Cloning dotfiles into $DOTFILES_DIR...\n"
 fi
 
 # Ensure ~/.config exists
 mkdir -p "$HOME/.config"
 
 # Powerlevel10k
-printf "[${BOLD_YELLOW}-${RESET}] Installing config for powerlevel10k..."
+printf "[${BOLD_YELLOW}•${RESET}] Installing config for powerlevel10k..."
 if [[ -f "$HOME/.p10k.zsh" ]]; then
     rm -f $HOME/.p10k.zsh
     ln -sf $DOTFILES_DIR/config/p10k.zsh $HOME/.p10k.zsh
 else
     ln -sf $DOTFILES_DIR/config/p10k.zsh $HOME/.p10k.zsh
 fi
-printf "\r[${BOLD_GREEN}√${RESET}] Installing config for powerlevel10k...\n"
+printf "\r[${BOLD_GREEN}✔${RESET}] Installing config for powerlevel10k...\n"
 
 # .zshrc (This should go last)
-printf "[${BOLD_YELLOW}-${RESET}] Updating zshrc..."
+printf "[${BOLD_YELLOW}•${RESET}] Updating zshrc..."
 if [[ -f "$HOME/.zshrc" ]]; then
     if [[ -f "$HOME/.zshrc.backup" ]]; then
         rm -f $HOME/.zshrc
@@ -94,7 +94,7 @@ if [[ -f "$HOME/.zshrc" ]]; then
 else
     ln -sf $DOTFILES_DIR/config/zshrc $HOME/.zshrc
 fi
-printf "\r[${BOLD_GREEN}√${RESET}] Updating zshrc...\n"
+printf "\r[${BOLD_GREEN}✔${RESET}] Updating zshrc...\n"
 
-printf "\n[${BOLD_GREEN}√${RESET}] ${BOLD_GREEN}Installation completed without errors.${RESET}\n\n"
+printf "\n[${BOLD_GREEN}✔${RESET}] ${BOLD_GREEN}Installation completed without errors.${RESET}\n\n"
 exit 0
