@@ -22,29 +22,18 @@ BOLD_WHITE="\033[1;37m"
 RESET="\033[0m" # Reset to default color
 BOLD_RESET="\033[0m\033[1m"
 
-printf "\nWelcome to D3CL4NZ's dotfile installation script!\n"
+printf "\nWelcome to ${BOLD_MAGENTA}D3CL4NZ's dotfile installation script${RESET}!\n"
 printf "[${BOLD_YELLOW}!${RESET}] ${BOLD_CYAN}This script is meant to be executed on ArchLinux.${RESET}\n\n"
 
-if [[ -f /etc/os-release ]]; then
-  source /etc/os-release
-  if [[ "${ID,,}" != "arch" ]]; then
-    printf >&2 "\r[${BOLD_RED}✘${RESET}] ${BOLD_RED}OS check failed.${RESET}\n"
-    exit 1
-  fi
-else
-  printf >&2 "\r[${BOLD_RED}✘${RESET}] ${BOLD_RED}OS check failed.${RESET}\n"
-  exit 1
-fi
-
 printf "[${BOLD_YELLOW}•${RESET}] Checking for git..."
-command -v git > /dev/null 2>&1 || { printf >&2 "\r[${BOLD_RED}✘${RESET}] ${BOLD_RED}Git is not installed.${RESET}\n"; exit 1; }
+command -v git > /dev/null 2>&1 || { printf >&2 "\r[${BOLD_RED}✘${RESET}] ${BOLD_MAGENTA}git${RESET} ${RED}is not installed.${RESET}\n"; exit 1; }
 printf "\r[${BOLD_GREEN}✔${RESET}] Checking for git...\n"
 
 printf "[${BOLD_YELLOW}•${RESET}] Checking for oh-my-zsh..."
 if [ -d "$HOME/.oh-my-zsh" ]; then
     printf "\r[${BOLD_GREEN}✔${RESET}] Checking for oh-my-zsh...\n"
 else
-    printf "\r[${BOLD_RED}✘${RESET}] ${BOLD_RED}Oh-my-zsh is not installed.${RESET}\n"
+    printf "\r[${BOLD_RED}✘${RESET}] ${BOLD_MAGENTA}oh-my-zsh${RESET} ${RED}is not installed.${RESET}\n"
     exit 1
 fi
 
@@ -52,8 +41,24 @@ printf "[${BOLD_YELLOW}•${RESET}] Checking for powerlevel10k..."
 if [ -d "$HOME/.oh-my-zsh/custom/themes/powerlevel10k" ]; then
     printf "\r[${BOLD_GREEN}✔${RESET}] Checking for powerlevel10k...\n"
 else
-    printf "\r[${BOLD_RED}✘${RESET}] ${BOLD_RED}Powerlevel10k is not installed.${RESET}\n"
+    printf "\r[${BOLD_RED}✘${RESET}] ${BOLD_MAGENTA}powerlevel10k${RESET} ${RED}is not installed.${RESET}\n"
     exit 1
+fi
+
+printf "[${BOLD_YELLOW}•${RESET}] Checking for i3..."
+command -v i3 > /dev/null 2>&1 || { printf >&2 "\r[${BOLD_RED}✘${RESET}] ${BOLD_MAGENTA}i3${RESET} ${RED}is not installed.${RESET}\n"; exit 1; }
+printf "\r[${BOLD_GREEN}✔${RESET}] Checking for i3...\n"
+
+printf "[${BOLD_YELLOW}•${RESET}] Checking for fontconfig..."
+command -v git > /dev/null 2>&1 || { printf >&2 "\r[${BOLD_RED}✘${RESET}] ${BOLD_MAGENTA}fontconfig${RESET} ${RED}is not installed.${RESET}\n"; exit 1; }
+printf "\r[${BOLD_GREEN}✔${RESET}] Checking for fontconfig...\n"
+
+printf "[${BOLD_YELLOW}•${RESET}] Checking if Meslo NerdFont is installed..."
+if fc-list | grep -i "MesloLGM Nerd Font" >/dev/null 2>&1; then
+  printf "\r[${BOLD_GREEN}✔${RESET}] Checking if Meslo NerdFont is installed...\n"
+else
+  printf "\r[${BOLD_RED}✘${RESET}] ${BOLD_MAGENTA}ttf-meslo-nerd${RESET} ${RED}is not installed.${RESET}\n"
+  exit 1
 fi
 
 printf "\nDependency check complete. Beginning installation...\n"
