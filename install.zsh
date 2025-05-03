@@ -53,9 +53,9 @@ printf "[${BOLD_YELLOW}•${RESET}] Checking for fontconfig..."
 command -v git > /dev/null 2>&1 || { printf >&2 "\r[${BOLD_RED}✘${RESET}] ${BOLD_MAGENTA}fontconfig${RESET} ${RED}is not installed.${RESET}\n"; exit 1; }
 printf "\r[${BOLD_GREEN}✔${RESET}] Checking for fontconfig...\n"
 
-printf "[${BOLD_YELLOW}•${RESET}] Checking if Meslo NerdFont is installed..."
+printf "[${BOLD_YELLOW}•${RESET}] Checking for ttf-meslo-nerd..."
 if fc-list | grep -i "MesloLGM Nerd Font" >/dev/null 2>&1; then
-  printf "\r[${BOLD_GREEN}✔${RESET}] Checking if Meslo NerdFont is installed...\n"
+  printf "\r[${BOLD_GREEN}✔${RESET}] Checking for ttf-meslo-nerd...\n"
 else
   printf "\r[${BOLD_RED}✘${RESET}] ${BOLD_MAGENTA}ttf-meslo-nerd${RESET} ${RED}is not installed.${RESET}\n"
   exit 1
