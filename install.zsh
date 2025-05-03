@@ -143,6 +143,19 @@ else
 fi
 printf "\r[${BOLD_GREEN}✔${RESET}] Installing config for alacritty...\n"
 
+# Ensure ~/.config/i3 exists
+mkdir -p "$HOME/.config/i3"
+
+# i3
+printf "[${BOLD_YELLOW}•${RESET}] Installing config for i3..."
+if [[ -f "$HOME/.config/i3/config" ]]; then
+    rm -f $HOME/.config/i3/config
+    ln -sf $DOTFILES_DIR/config/i3 $HOME/.config/i3/config
+else
+    ln -sf $DOTFILES_DIR/config/i3 $HOME/.config/i3/config
+fi
+printf "\r[${BOLD_GREEN}✔${RESET}] Installing config for i3...\n"
+
 # .zshrc (This should go last)
 printf "[${BOLD_YELLOW}•${RESET}] Updating zshrc..."
 if [[ -f "$HOME/.zshrc" ]]; then
