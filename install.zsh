@@ -139,6 +139,21 @@ printf "[${BOLD_YELLOW}•${RESET}] Checking for dmenu..."
 command -v dmenu_run > /dev/null 2>&1 || { printf >&2 "\r[${BOLD_RED}✘${RESET}] ${BOLD_MAGENTA}dmenu${RESET} ${RED}is not installed.${RESET}\n"; exit 1; }
 printf "\r[${BOLD_GREEN}✔${RESET}] Checking for dmenu...\n"
 
+# Check if maim is installed
+printf "[${BOLD_YELLOW}•${RESET}] Checking for maim..."
+command -v maim > /dev/null 2>&1 || { printf >&2 "\r[${BOLD_RED}✘${RESET}] ${BOLD_MAGENTA}maim${RESET} ${RED}is not installed.${RESET}\n"; exit 1; }
+printf "\r[${BOLD_GREEN}✔${RESET}] Checking for maim...\n"
+
+# Check if xdotool is installed
+printf "[${BOLD_YELLOW}•${RESET}] Checking for xdotool..."
+command -v xdotool > /dev/null 2>&1 || { printf >&2 "\r[${BOLD_RED}✘${RESET}] ${BOLD_MAGENTA}xdotool${RESET} ${RED}is not installed.${RESET}\n"; exit 1; }
+printf "\r[${BOLD_GREEN}✔${RESET}] Checking for xdotool...\n"
+
+# Check if xclip is installed
+printf "[${BOLD_YELLOW}•${RESET}] Checking for xclip..."
+command -v xclip > /dev/null 2>&1 || { printf >&2 "\r[${BOLD_RED}✘${RESET}] ${BOLD_MAGENTA}xclip${RESET} ${RED}is not installed.${RESET}\n"; exit 1; }
+printf "\r[${BOLD_GREEN}✔${RESET}] Checking for xclip...\n"
+
 printf "\nDependency check complete. Beginning installation...\n"
 
 # Clone or update the repo
