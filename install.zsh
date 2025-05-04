@@ -184,8 +184,9 @@ else
 fi
 printf "\r[${BOLD_GREEN}✔${RESET}] Installing config for alacritty...\n"
 
-# Ensure ~/.config/i3 exists
+# Ensure ~/.config/i3 and ~/.config/i3status exist
 mkdir -p "$HOME/.config/i3"
+mkdir -p "$HOME/.config/i3status"
 
 # i3
 printf "[${BOLD_YELLOW}•${RESET}] Installing config for i3..."
@@ -194,6 +195,12 @@ if [[ -f "$HOME/.config/i3/config" ]]; then
     ln -sf $DOTFILES_DIR/config/i3/config $HOME/.config/i3/config
 else
     ln -sf $DOTFILES_DIR/config/i3/config $HOME/.config/i3/config
+fi
+if [[ -f "$HOME/.config/i3status/config" ]]; then
+    rm -f $HOME/.config/i3status/config
+    ln -sf $DOTFILES_DIR/config/i3status/config $HOME/.config/i3status/config
+else
+    ln -sf $DOTFILES_DIR/config/i3status/config $HOME/.config/i3status/config
 fi
 printf "\r[${BOLD_GREEN}✔${RESET}] Installing config for i3...\n"
 
