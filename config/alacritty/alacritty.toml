@@ -15,7 +15,7 @@ decorations = "Full"
 decorations_theme_variant = "Dark"
 
 [font]
-size = 8.0
+size = 12.0
 
 [font.bold]
 family = "MesloLGS Nerd Font Mono"
