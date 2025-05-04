@@ -124,11 +124,6 @@ printf "[${BOLD_YELLOW}•${RESET}] Checking for dunst..."
 command -v dunst > /dev/null 2>&1 || { printf >&2 "\r[${BOLD_RED}✘${RESET}] ${BOLD_MAGENTA}dunst${RESET} ${RED}is not installed.${RESET}\n"; exit 1; }
 printf "\r[${BOLD_GREEN}✔${RESET}] Checking for dunst...\n"
 
-# Check if rofi is installed
-printf "[${BOLD_YELLOW}•${RESET}] Checking for rofi..."
-command -v rofi > /dev/null 2>&1 || { printf >&2 "\r[${BOLD_RED}✘${RESET}] ${BOLD_MAGENTA}rofi${RESET} ${RED}is not installed.${RESET}\n"; exit 1; }
-printf "\r[${BOLD_GREEN}✔${RESET}] Checking for rofi...\n"
-
 # Check if xss-lock is installed
 printf "[${BOLD_YELLOW}•${RESET}] Checking for xss-lock..."
 command -v xss-lock > /dev/null 2>&1 || { printf >&2 "\r[${BOLD_RED}✘${RESET}] ${BOLD_MAGENTA}xss-lock${RESET} ${RED}is not installed.${RESET}\n"; exit 1; }
@@ -211,16 +206,6 @@ printf "\r[${BOLD_GREEN}✔${RESET}] Installing config for picom...\n"
 
 # Ensure ~/.config/rofi exists
 mkdir -p "$HOME/.config/rofi"
-
-# rofi
-printf "[${BOLD_YELLOW}•${RESET}] Installing config for rofi..."
-if [[ -f "$HOME/.config/rofi/config.rasi" ]]; then
-    rm -f $HOME/.config/rofi/config.rasi
-    ln -sf $DOTFILES_DIR/config/rofi/config.rasi $HOME/.config/rofi/config.rasi
-else
-    ln -sf $DOTFILES_DIR/config/rofi/config.rasi $HOME/.config/rofi/config.rasi
-fi
-printf "\r[${BOLD_GREEN}✔${RESET}] Installing config for rofi...\n"
 
 # .zshrc (This should go last)
 printf "[${BOLD_YELLOW}•${RESET}] Updating zshrc..."
