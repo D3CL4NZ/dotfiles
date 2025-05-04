@@ -1,18 +1,32 @@
 # $HOME/.config/alacritty/alacritty.toml
 # by Declan Zevan 2025-05-03
 
+import = [
+  "~/.config/alacritty/dark-pastel.toml"
+]
+
 [window]
 
 opacity = 0.9
 
 decorations = "Full"
-decorations_theme_variant = "Dark" # "Light"
+decorations_theme_variant = "Dark"
 
 [font]
-
-normal.family = "MesloLGM Nerd Font Mono"
-bold.family = "MesloLGM Nerd Font Mono"
-italic.family = "MesloLGM Nerd Font Mono"
-bold_italic.family = "MesloLGM Nerd Font Mono"
-
 size = 8.0
+
+[font.bold]
+family = "MesloLGS Nerd Font Mono"
+style = "Bold"
+
+[font.bold_italic]
+family = "MesloLGS Nerd Font Mono"
+style = "Bold Italic"
+
+[font.italic]
+family = "MesloLGS Nerd Font Mono"
+style = "Italic"
+
+[font.normal]
+family = "MesloLGS Nerd Font Mono"
+style = "Regular"
