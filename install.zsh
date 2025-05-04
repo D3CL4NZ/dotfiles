@@ -176,6 +176,12 @@ if [[ -f "$HOME/.config/alacritty/alacritty.toml" ]]; then
 else
     ln -sf $DOTFILES_DIR/config/alacritty/alacritty.toml $HOME/.config/alacritty/alacritty.toml
 fi
+if [[ -f "$HOME/.config/alacritty/dark-pastel.toml" ]]; then
+    rm -f $HOME/.config/alacritty/dark-pastel.toml
+    ln -sf $DOTFILES_DIR/config/alacritty/dark-pastel.toml $HOME/.config/alacritty/dark-pastel.toml
+else
+    ln -sf $DOTFILES_DIR/config/alacritty/dark-pastel.toml $HOME/.config/alacritty/dark-pastel.toml
+fi
 printf "\r[${BOLD_GREEN}✔${RESET}] Installing config for alacritty...\n"
 
 # Ensure ~/.config/i3 exists
