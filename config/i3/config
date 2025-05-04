@@ -195,10 +195,10 @@ bar {
                 statusline #EEEFFF
                 separator  #272B3B
 
-                focused_workspace  #262A39 #173043 #D2DEE7
-                active_workspace   #262A39 #000E1A #D2DEE7
+                focused_workspace  #262A39 #1D3B53 #EEEFFF
+                active_workspace   #262A39 #000E1A #EEEFFF
                 inactive_workspace #262A39 #000E1A #5F7E97
-                urgent_workspace   #262A39 #AB0300 #D2DEE7
+                urgent_workspace   #262A39 #AB0300 #EEEFFF
                 binding_mode       #262A39 #AB0300 #EEEFFF
         }
 }
