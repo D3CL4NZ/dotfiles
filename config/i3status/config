@@ -27,6 +27,7 @@ ethernet _first_ {
 
 battery all {
         format = "󰂎  %status %percentage %remaining"
+        format_down = "󱉞  No battery"
 }
 
 disk "/" {
@@ -39,8 +40,10 @@ load {
 
 memory {
         format = "  %used | %available"
-        threshold_degraded = "1G"
-        format_degraded = "  MEMORY < %available"
+        threshold_degraded = "10%"
+        threshold_critical = "5%"
+        format_degraded = "  MEMORY LOW | %available"
+        format_critical = "  MEMORY CRITICAL"
 }
 
 tztime local {
