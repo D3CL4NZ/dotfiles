@@ -43,7 +43,6 @@ memory {
         threshold_degraded = "10%"
         threshold_critical = "5%"
         format_degraded = "  MEMORY LOW | %available"
-        format_critical = "  MEMORY CRITICAL"
 }
 
 tztime local {
