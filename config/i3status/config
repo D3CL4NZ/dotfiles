@@ -16,8 +16,8 @@ order += "memory"
 order += "tztime local"
 
 wireless _first_ {
-        format_up = " (%quality at %essid) %ip"
-        format_down = " down"
+        format_up = "󰖩 (%quality at %essid) %ip"
+        format_down = "󰖩 down"
 }
 
 ethernet _first_ {
@@ -39,10 +39,10 @@ load {
 }
 
 memory {
-        format = " %used | %available"
+        format = " %used | %available"
         threshold_degraded = "10%"
         threshold_critical = "5%"
-        format_degraded = " MEMORY LOW | %available"
+        format_degraded = " MEMORY LOW | %available"
 }
 
 tztime local {
