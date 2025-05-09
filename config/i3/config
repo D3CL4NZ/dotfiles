@@ -2,7 +2,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+set $mod Mod4
 
 exec --no-startup-id picom
 exec --no-startup-id feh --bg-scale ~/.config/wallpaper.jpg
