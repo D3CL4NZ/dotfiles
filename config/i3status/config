@@ -15,10 +15,6 @@ order += "load"
 order += "memory"
 order += "tztime local"
 
-ipv6 {
-        format_down = "no IPv6 :("
-}
-
 wireless _first_ {
         format_up = "  (%quality at %essid) %ip"
         format_down = "  down"
@@ -50,5 +46,5 @@ memory {
 }
 
 tztime local {
-        format = "%Y-%m-%d %H:%M:%S"
+        format = "󰃭  %Y-%m-%d    %H:%M:%S"
 }
