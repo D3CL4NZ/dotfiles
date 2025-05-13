@@ -204,9 +204,9 @@ bar {
 }
 
 # class                 border  bground text    indicator child_border
-client.focused          #FF2F97 #330156 #FF2F97 #A31E60   #330156
-client.focused_inactive #41718C #001733 #77CFFF #4E87A8   #001733
-client.unfocused        #41718C #001622 #41718C #4E87A8   #001622
+client.focused          #FF2F97 #330156 #FF2F97 #330156   #330156
+client.focused_inactive #41718C #001733 #77CFFF #001733   #001733
+client.unfocused        #41718C #001622 #41718C #001622   #001622
 client.urgent           #2F343A #AB0300 #D2DEE7 #AB0300   #AB0300
 client.placeholder      #000000 #0C0C0C #EEEFFF #000000   #0C0C0C
 
