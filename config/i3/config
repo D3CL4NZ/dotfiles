@@ -191,23 +191,23 @@ bar {
         status_command i3status
 
         colors {
-                background #011627
-                statusline #EEEFFF
+                background #001733
+                statusline #77CFFF
                 separator  #5A6E6F
 
-                focused_workspace  #262A39 #1D3B53 #EEEFFF
-                active_workspace   #262A39 #000E1A #EEEFFF
-                inactive_workspace #262A39 #000E1A #5F7E97
-                urgent_workspace   #262A39 #AB0300 #EEEFFF
-                binding_mode       #262A39 #AB0300 #EEEFFF
+                focused_workspace  #FF2F97 #330156 #FF2F97
+                active_workspace   #41718C #001733 #77CFFF
+                inactive_workspace #41718C #001733 #41718C
+                urgent_workspace   #330156 #AB0300 #EEEFFF
+                binding_mode       #2F343A #AB0300 #EEEFFF
         }
 }
 
 # class                 border  bground text    indicator child_border
-client.focused          #262A39 #0B2942 #D2DEE7 #1D3B53   #0B2942
-client.focused_inactive #262A39 #011627 #D2DEE7 #1D3B53   #011627
-client.unfocused        #262A39 #000E1A #5F7E97 #1D3B53   #000E1A
-client.urgent           #262A39 #AB0300 #D2DEE7 #AB0300   #AB0300
+client.focused          #FF2F97 #330156 #FF2F97 #1D3B53   #330156
+client.focused_inactive #41718C #001733 #77CFFF #1D3B53   #001733
+client.unfocused        #41718C #001622 #41718C #1D3B53   #001622
+client.urgent           #2F343A #AB0300 #D2DEE7 #AB0300   #AB0300
 client.placeholder      #000000 #0C0C0C #EEEFFF #000000   #0C0C0C
 
-client.background       #011627
+client.background       #001733
