@@ -198,7 +198,7 @@ bar {
                 focused_workspace  #FF2F97 #330156 #FF2F97
                 active_workspace   #41718C #001733 #77CFFF
                 inactive_workspace #41718C #001733 #41718C
-                urgent_workspace   #330156 #FF2F97 #330156
+                urgent_workspace   #C62475 #FF2F97 #330156
                 binding_mode       #330156 #FF2F97 #330156
         }
 }
@@ -207,7 +207,7 @@ bar {
 client.focused          #FF2F97 #330156 #FF2F97 #330156   #330156
 client.focused_inactive #41718C #001733 #77CFFF #001733   #001733
 client.unfocused        #41718C #001622 #41718C #001622   #001622
-client.urgent           #330156 #FF2F97 #330156 #FF2F97   #FF2F97
+client.urgent           #C62475 #FF2F97 #330156 #FF2F97   #FF2F97
 client.placeholder      #000000 #0C0C0C #EEEFFF #000000   #0C0C0C
 
 client.background       #001733
