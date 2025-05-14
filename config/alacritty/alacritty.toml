@@ -4,7 +4,7 @@
 [general]
 
 import = [
-  "~/.config/alacritty/dark-pastel.toml"
+  "~/.config/alacritty/vaporwave.toml"
 ]
 
 [window]
