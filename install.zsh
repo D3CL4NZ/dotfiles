@@ -154,6 +154,11 @@ printf "[${BOLD_YELLOW}•${RESET}] Checking for xclip..."
 command -v xclip > /dev/null 2>&1 || { printf >&2 "\r[${BOLD_RED}✘${RESET}] ${BOLD_MAGENTA}xclip${RESET} ${RED}is not installed.${RESET}\n"; exit 1; }
 printf "\r[${BOLD_GREEN}✔${RESET}] Checking for xclip...\n"
 
+# Check if dunst is installed
+printf "[${BOLD_YELLOW}•${RESET}] Checking for dunst..."
+command -v dunst > /dev/null 2>&1 || { printf >&2 "\r[${BOLD_RED}✘${RESET}] ${BOLD_MAGENTA}dunst${RESET} ${RED}is not installed.${RESET}\n"; exit 1; }
+printf "\r[${BOLD_GREEN}✔${RESET}] Checking for dunst...\n"
+
 printf "\nDependency check complete. Beginning installation...\n"
 
 # Clone or update the repo
@@ -238,8 +243,15 @@ else
 fi
 printf "\r[${BOLD_GREEN}✔${RESET}] Installing config for picom...\n"
 
-# Ensure ~/.config/rofi exists
-mkdir -p "$HOME/.config/rofi"
+# dunst
+printf "[${BOLD_YELLOW}•${RESET}] Installing config for dunst..."
+if [[ -f "$HOME/.config/dunst/dunstrc" ]]; then
+    rm -f $HOME/.config/dunst/dunstrc
+    ln -sf $DOTFILES_DIR/config/dunst/dunstrc $HOME/.config/dunst/dunstrc
+else
+    ln -sf $DOTFILES_DIR/config/dunst/dunstrc $HOME/.config/dunst/dunstrc
+fi
+printf "\r[${BOLD_GREEN}✔${RESET}] Installing config for dunst...\n"
 
 # .zshrc (This should go last)
 printf "[${BOLD_YELLOW}•${RESET}] Updating zshrc..."
