@@ -243,6 +243,9 @@ else
 fi
 printf "\r[${BOLD_GREEN}✔${RESET}] Installing config for picom...\n"
 
+# Ensure ~/.config/dunst exists
+mkdir -p "$HOME/.config/dunst"
+
 # dunst
 printf "[${BOLD_YELLOW}•${RESET}] Installing config for dunst..."
 if [[ -f "$HOME/.config/dunst/dunstrc" ]]; then
