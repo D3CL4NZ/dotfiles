@@ -17,7 +17,7 @@ order += "tztime local"
 
 wireless _first_ {
         format_up = "  (%quality at %essid) %ip"
-        format_down = "󰖪  Wi-Fi disabled"
+        format_down = "󰖪  down"
 }
 
 ethernet _first_ {
@@ -28,11 +28,11 @@ ethernet _first_ {
 battery all {
         format = "%status %percentage %remaining"
         format_down = "󱉞 No battery"
-        status_idle = " Idle"
-        status_chr = "󱐋 Charging"
-        status_bat = "󰂎 Discharging"
-        status_unk = "󰂑 Unknown"
-        status_full = "󰁹 Fully charged"
+        status_idle = ""
+        status_chr = "󱐋"
+        status_bat = "󰂎"
+        status_unk = "󰂑"
+        status_full = "󰁹"
 }
 
 disk "/" {
