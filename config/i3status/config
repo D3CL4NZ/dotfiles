@@ -33,7 +33,7 @@ battery all {
         status_bat = "󰂎"
         status_unk = "󰂑"
         status_full = "󰁹"
-        low_threshold = "10%"
+        low_threshold = 10
         threshold_type = "percentage"
 }
 
