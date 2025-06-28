@@ -65,7 +65,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id "dmenu_run -nf '#D2DEE7' -nb '#011627' -sb '#1D3B53' -sf '#EEEFFF'"
+bindsym $mod+d exec --no-startup-id "export PATH=$HOME/bin:$HOME/.local/bin:$PATH; dmenu_run -nf '#D2DEE7' -nb '#011627' -sb '#1D3B53' -sf '#EEEFFF'"
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -220,3 +220,10 @@ client.urgent           #C62475 #FF2F97 #330156 #FF2F97   #FF2F97
 client.placeholder      #000000 #0C0C0C #EEEFFF #000000   #0C0C0C
 
 client.background       #001733
+
+# Window-specific commands
+for_window [class="^dev-figboot-autool-AutoOL$"] floating enable
+for_window [class="^KiCad$"] floating enable
+for_window [class="^KiCad$" title="(Schematic Editor|PCB Editor)"] floating disable, layout tabbed
+for_window [class="^steam$" title="Friends List"] floating enable
+for_window [class="^Tor Browser$"] floating enable
