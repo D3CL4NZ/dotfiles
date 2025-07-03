@@ -9,6 +9,7 @@ general {
 order += "ipv6"
 order += "wireless _first_"
 order += "ethernet _first_"
+order += "path_exists VPN"
 order += "battery all"
 order += "disk /"
 order += "load"
@@ -23,6 +24,14 @@ wireless _first_ {
 ethernet _first_ {
         format_up = "  %ip (%speed)"
         format_down = "  down"
+}
+
+# If you're using an L2TP/IPSec VPN, the adapter will be called "ppp0". For IKEv2 and WireGuard connections, it will be something like "tun0" or "wg0"
+# Change the path accordingly depending on your VPN's adapter name
+path_exists VPN {
+        path = "/sys/class/net/ppp0"
+        format = " active"
+        format_down = " inactive"
 }
 
 battery all {
