@@ -225,5 +225,9 @@ client.background       #001733
 for_window [class="^dev-figboot-autool-AutoOL$"] floating enable
 for_window [class="^KiCad$"] floating enable
 for_window [class="^KiCad$" title="(Schematic Editor|PCB Editor)"] floating disable, layout tabbed
+for_window [class="^bitmap2component$"] floating enable
+for_window [class="^pcb_calculator$"] floating enable
 for_window [class="^steam$" title="Friends List"] floating enable
 for_window [class="^Tor Browser$"] floating enable
+for_window [class="^Xarchiver$"] floating enable
+for_window [class="^PrismLauncher$"] floating enable
